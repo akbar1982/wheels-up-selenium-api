@@ -89,36 +89,36 @@ public class RequestInfoPage extends TestBase {
    }
 
    public void chooseTypeOfTravel(String type){
-       click(typeOfTravelDropdownMenu);
+       jsClick(typeOfTravelDropdownMenu);
        if(type.equals("Personal Travel")){
-           click(personalTravelMenuOption);
+           jsClick(personalTravelMenuOption);
        }else if(type.equals("Busines Travel")){
-           click(businessTravelMenuOption);
+           jsClick(businessTravelMenuOption);
        }else{
-           click(bothTravelMenuOption);
+           jsClick(bothTravelMenuOption);
        }
 
    }
 
     public void chooseFlightsAYear(String option){
 
-        click(privateFlightsCountYearDropdownMenu);
+        jsClick(privateFlightsCountYearDropdownMenu);
 
         if(option.equals("0")){
-            click(optionZero);
+            jsClick(optionZero);
         }else if(option.equals("1-5")){
-            click(optionOneToFive);
+            jsClick(optionOneToFive);
         }else if(option.equals("5-10")){
-            click(optionFiveToTen);
+            jsClick(optionFiveToTen);
         }else{
-            click(optionTen);
+            jsClick(optionTen);
         }
 
     }
 
     public void chooseTraveToSecondHome(String option){
 
-        click(travelSecondHomeMenu);
+        jsClick(travelSecondHomeMenu);
 
         if(option.equals("Yes")){
             jsClick(travelSecondHomeOptionYes);
