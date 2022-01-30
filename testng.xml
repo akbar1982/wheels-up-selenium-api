@@ -4,8 +4,6 @@
     <test thread-count="1" name = "WheelsUp Test">
         <classes>
             <class name = "tests.TestRunner"/>
-            <class name = "tests.HomePageDef"/>
-
         </classes>
     </test>
 </suite>

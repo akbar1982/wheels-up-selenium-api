@@ -14,14 +14,18 @@ import org.testng.annotations.*;
 
 import java.io.File;
 
-//@Test
+
 @CucumberOptions(
 
         features = "src/test/resources/features/",
         glue = {"tests"},
         dryRun = false,
         tags = {"@Smoke"},
-        plugin = { "json:target/jsonReports/cucumber.json", "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"},
+        plugin = {"html:target/cucumber-html-report",
+                "json:target/cucumber.json",
+                "pretty:target/cucumber-pretty.txt","usage:target/cucumber.json", "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
+//        plugin = { "json:target/jsonReports/cucumber.json", "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"},
 //        plugin = { "cucumberHooks.customReportListener","io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm" },
         monochrome = true )
 

@@ -30,6 +30,12 @@
             <artifactId>cucumber-java</artifactId>
             <version>${cucumber.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
 
         <!--Selenium Dependency-->
         <dependency>
@@ -81,26 +87,6 @@
             <scope>test</scope>
         </dependency>
 
-
-        <dependency>
-            <groupId>org.json</groupId>
-            <artifactId>json</artifactId>
-            <version>20211205</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.googlecode.json-simple</groupId>
-            <artifactId>json-simple</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-library</artifactId>
-            <version>2.2</version>
-            <scope>test</scope>
-        </dependency>
-
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
@@ -113,7 +99,18 @@
                 <version>2.9.8</version>
             </dependency>
 
-
+        <dependency>
+        <groupId>tech.grasshopper</groupId>
+        <artifactId>extentreports-cucumber6-adapter</artifactId>
+        <version>2.0.0</version>
+        <scope>test</scope>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+    <dependency>
+        <groupId>com.aventstack</groupId>
+        <artifactId>extentreports</artifactId>
+        <version>5.0.4</version>
+    </dependency>
 
     </dependencies>
 
@@ -158,8 +155,10 @@
                 <version>${allure.maven.version}</version>
                 <configuration>
                     <reportVersion>${allure.maven.version}</reportVersion>
+                    <reportDirectory>${basedir}/target/allure-report</reportDirectory>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 </project>
