@@ -99,18 +99,7 @@
                 <version>2.9.8</version>
             </dependency>
 
-        <dependency>
-        <groupId>tech.grasshopper</groupId>
-        <artifactId>extentreports-cucumber6-adapter</artifactId>
-        <version>2.0.0</version>
-        <scope>test</scope>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-    <dependency>
-        <groupId>com.aventstack</groupId>
-        <artifactId>extentreports</artifactId>
-        <version>5.0.4</version>
-    </dependency>
+
 
     </dependencies>
 
@@ -149,15 +138,14 @@
                 </dependencies>
             </plugin>
 
-            <plugin>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-maven</artifactId>
-                <version>${allure.maven.version}</version>
-                <configuration>
-                    <reportVersion>${allure.maven.version}</reportVersion>
-                    <reportDirectory>${basedir}/target/allure-report</reportDirectory>
-                </configuration>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>io.qameta.allure</groupId>-->
+<!--                <artifactId>allure-maven</artifactId>-->
+<!--                <version>${allure.maven.version}</version>-->
+<!--                <configuration>-->
+<!--                    <reportVersion>${allure.maven.version}</reportVersion>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
 
         </plugins>
     </build>

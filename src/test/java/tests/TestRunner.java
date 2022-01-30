@@ -8,10 +8,12 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
+import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.*;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 
 
@@ -23,10 +25,8 @@ import java.io.File;
         tags = {"@Smoke"},
         plugin = {"html:target/cucumber-html-report",
                 "json:target/cucumber.json",
-                "pretty:target/cucumber-pretty.txt","usage:target/cucumber.json", "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-//        plugin = { "json:target/jsonReports/cucumber.json", "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"},
-//        plugin = { "cucumberHooks.customReportListener","io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm" },
+                "pretty:target/cucumber-pretty.txt","usage:target/cucumber.json", "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"},
+
         monochrome = true )
 
 public class TestRunner extends AbstractTestNGCucumberTests {
@@ -42,21 +42,19 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 
         @BeforeTest
         public void runBefore(){
-//                base.navigateToUrl();          //This is commented because of api test runtime browser should not start
+
         }
         @AfterTest
         public void runAfter(){
-//                driver.closeBrowser();  //This is commented because of api test runtime browser should not start
+
         }
 
 //        @AfterStep
 //        public void runAfterStep(Scenario scenario) {
 //                try {
-//                        String screenshotName = scenario.getName().replaceAll("", "_");
+//
 //                        if (scenario.isFailed()) {
-//                                TakesScreenshot ts = (TakesScreenshot) driver;
-//                                byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
-//                                scenario.attach(screenshot, "img/png", screenshotName);
+//                          Allure.addAttachment("screenshot",new ByteArrayInputStream(((TakesScreenshot)driver.getDriver()).getScreenshotAs(OutputType.BYTES)));
 //                        }
 //                } catch (Exception e) {
 //                        e.printStackTrace();
