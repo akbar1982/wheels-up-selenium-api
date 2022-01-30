@@ -39,11 +39,7 @@ public class RequestInfoDef {
         // For other transformations you can register a DataTableType.
         Map<String, String> data = dataTable.asMap(String.class,String.class);
         requestInfoPage.fillOutTheForm( data);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
     @Then("User clicks on close button in the corner of the page")
